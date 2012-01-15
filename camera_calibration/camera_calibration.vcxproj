@@ -92,7 +92,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="camera_calibration.cpp" />
+    <ClCompile Include="CalibrateCamera.cpp" />
+    <ClCompile Include="TestCalibrateCamera.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CalibrateCamera.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
