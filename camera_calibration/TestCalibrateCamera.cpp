@@ -31,11 +31,14 @@ int main(int argc, char* argv[])
 {
 	// Create new test class
 	CalibrateCamera CamTest1(5, 5, 9, 6);
-	
+	std::string intrinsicsfile ("testintirinsics.xml");
+	std::string distrotionfile ("testdistortion.xml");
+
 	// Start Test
 	CamTest1.startCapture();
-	CamTest1.calibrateCamera();
-	CamTest1.showCalibrationData();
+	CamTest1.calibrateCamera(intrinsicsfile, distrotionfile );
+	CamTest1.showCalibrationData(intrinsicsfile, distrotionfile);
+	CamTest1.showDeskewedImage(intrinsicsfile, distrotionfile);
 
 	return 0;
 }

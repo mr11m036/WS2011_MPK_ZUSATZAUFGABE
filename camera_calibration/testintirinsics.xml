@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<opencv_storage>
+<testintirinsics type_id="opencv-matrix">
+  <rows>3</rows>
+  <cols>3</cols>
+  <dt>f</dt>
+  <data>
+    9.00328308e+002 0. 3.36311157e+002 0. 9.00328308e+002
+    2.06246826e+002 0. 0. 1.</data></testintirinsics>
+</opencv_storage>

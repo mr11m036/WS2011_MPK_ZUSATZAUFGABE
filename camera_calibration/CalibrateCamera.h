@@ -48,10 +48,9 @@ Hinweis: Bitte geben Sie dieses Programm entweder als MS Visual C++ 2010 Projekt
 
 /*--- #define-Konstanten und Makros ----------------------------------*/
 #define NOB 20     // Number of boards for calibration
-
+#define DEFAULT_INTRINISCS "Intrinsics.xml" 
+#define DEFAULT_DISTORTION "Distortion.xml"
 /*--- Globale Variablen ----------------------------------------------*/
-
-
 
 
 class CalibrateCamera
@@ -60,10 +59,12 @@ class CalibrateCamera
 
 		void startCapture();
 		void showCalibrationData();
-		void showCalibrationData(const char* sIntrinsics, const char* sDistortion);
+		void showCalibrationData(std::string sIntrinsicsFile, std::string sDistortionFile);
 		int calibrateCamera();
-		void saveCalibrateData(const char* sIntrinsicsFile, const char* sDistortionFile);
+		int calibrateCamera(std::string sIntrinsicsFile, std::string sDistortionFile);
+		void saveCalibrateData(std::string sIntrinsicsFile, std::string sDistortionFile);
 		void showDeskewedImage();
+		void showDeskewedImage(std::string sIntrinsicsFile, std::string sDistortionFile);
 
 
 		// Konstruktor
@@ -101,6 +102,9 @@ class CalibrateCamera
 		CvMat* intrinsic_matrix;
 		CvMat* distortion_coeffs;
 		
+		CvMat* object_points2 ;
+		CvMat* image_points2;
+		CvMat* point_counts2;
 		CvPoint2D32f* corners;
 
 		IplImage *image;
